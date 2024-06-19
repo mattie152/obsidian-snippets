@@ -1,0 +1,71 @@
+
+/* this snippet assumes that tags are pill-shaped, but will match properties with tag features dynamically. It works for live preview and reading mode.*/
+
+/*INLINE PROPERTIES*/
+
+span.inline-field {
+    white-space: nowrap;
+}
+
+.dataview .inline-field-key, .dataview .inline-field-value, .dataview.inline-field-standalone-value {
+    --inline-key-color-back: var(--tag-background);
+    --inline-border-color: var(--tag-border-color);
+
+    font-family: var(--font-monospace);
+    font-size: var(--font-normal);
+    vertical-align: baseline;
+    border: var(--tag-border-width) var(--inline-border-color);
+    text-decoration: none;
+    padding-top: var(--tag-padding-y); 
+    padding-bottom: var(--tag-padding-y);
+    background: var(--inline-key-color-back);
+    color: var(--font-text-normal);
+    font-weight: var(--font-light);
+}
+.dataview.inline-field-key, .inline-field-standalone-value {
+    border-right: none;
+    border-top-left-radius: var(--tag-radius);
+    border-bottom-left-radius: var(--tag-radius);
+    padding-left: var(--tag-padding-x); 
+    padding-right: 5px; /* set to var(--tag-padding-x) for differently coloured key/value */
+    /* uncomment to set distinct colors for property (in that case, it is recommended to remove the delimiter and set .inline-field-value > padding-left and .inline-field-key > padding-right to "var(--tag-padding-x)")*/
+    /*background: var(--color-accent);
+    color: white;*/
+}
+    .dataview.inline-field-key::after {
+        content: "·"; /* change or remove for different delimiter */
+        padding-left: 3px;
+        padding-right: 0px;
+        margin-right: 0px;
+    }
+
+.dataview.inline-field-value, .inline-field-standalone-value {
+    border-left: none;
+    border-top-right-radius: var(--tag-radius);
+    border-bottom-right-radius: var(--tag-radius);
+    padding-right: var(--tag-padding-x);
+    padding-left: 2px; /* set to var(--tag-padding-x) for differently coloured key/value */
+}
+
+
+/*TAGS*/
+
+.is-live-preview .cm-hashtag, .tag {
+    font-family: var(--font-monospace);
+    font-weight: var(--font-light);
+}
+
+/*remove "#"*/
+.is-live-preview .cm-hashtag, .tag {
+    border-end-start-radius: var(--tag-radius);
+    border-inline-end: none;
+    border-inline-start: var(--tag-border-width) solid var(--tag-border-color);
+    padding-inline-start: var(--tag-padding-x);
+    border-start-start-radius: var(--tag-radius);
+}
+.is-live-preview .cm-hashtag-begin {
+   display: none;
+}
+.tag::first-letter {
+    display: none;
+}
