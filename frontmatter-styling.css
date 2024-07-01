@@ -1,0 +1,75 @@
+
+/* makes subtle changes to the appearance of frontmatter:
+ - removes "Properties" heading
+ - lightens property keys
+ - "new property" label removed, only the icon is shown
+ - key icons vertically aligned
+ - clickable icon after links is removed (clicking the link has the same function)
+ - "open daily note" and date input icons aligned with text and lightened
+*/
+
+/* remove header*/
+
+.metadata-properties-title {
+    display: none;
+}
+.metadata-container .collapse-icon.is-collapsed svg {
+    visibility: hidden;
+}
+.metadata-container .collapse-icon.is-collapsed:hover svg {
+    visibility: visible;
+}
+
+.metadata-container {
+    border-bottom: 1.5px solid var(--divider-color);
+    padding-bottom: 10px;
+    padding-top: 0px;
+}
+.metadata-content {
+    border-top: 1.5px solid var(--divider-color);
+    padding-top: 1em
+}
+.metadata-add-button .text-button-label {
+    display: none;
+}
+
+/* change properties appearance */
+
+body {
+    --metadata-label-text-color: var(--text-faint) ;
+}
+  
+.metadata-add-button.text-icon-button {
+    padding-inline-start: 0;
+    margin-top: 0;
+    color: var(--text-faint) !important;
+}
+.metadata-add-button.text-icon-button {
+    padding-left: 3px;
+}
+.metadata-property-key .metadata-property-icon {
+  --icon-size: 1rem;
+  --icon-color: var(--text-faint); 
+}
+  .metadata-add-button.text-icon-button:hover {
+    color: var(--icon-color-focused);
+    background-color: var(--background)
+}
+.metadata-container { 
+    margin-bottom: 1.5rem;
+}
+.metadata-property-value .clickable-icon {
+    --icon-color: var(--text-faint);
+}
+.metadata-property-value .clickable-icon {
+    color: var(--text-faint);
+    padding-top: px;
+    padding-left: 0px !important;
+}
+.external-link {
+    background-image: none !important
+}
+input[type="date"]::-webkit-calendar-picker-indicator, input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+    opacity: 0.25;
+    padding-top: 5px;
+}
