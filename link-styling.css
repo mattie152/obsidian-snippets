@@ -1,4 +1,5 @@
 
+
 body {
     --link-color: var(--text-normal);
     --link-color-hover: var(--text-normal);
@@ -22,7 +23,7 @@ body {
     padding-left: 3px;
     padding-right: 3px;
 }
-.cm-hmd-internal-link:hover {
+.cm-hmd-internal-link:hover, .internal-link:hover {
     background: var(--background-modifier-hover); 
     padding-top: 2px;
     padding-bottom: 3px;
@@ -33,6 +34,9 @@ body {
 .cm-url .cm-underline {
     color: var(--text-muted) !important;
 }
+.cm-url.cm-underline:hover {
+    color: var(--text-normal) !important;
+ }
 
 /* applies to all */
 .cm-underline, .cm-url, .cm-link, .internal-link, .internal-link-unresolved {
@@ -40,6 +44,3 @@ body {
     text-decoration-color: var(--text-faint) !important;
     text-decoration-thickness: 0.5px !important;
 }
- a.cm-underline:hover {
-    color: var(--text-normal) !important;
- }
