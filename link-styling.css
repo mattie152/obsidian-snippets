@@ -1,0 +1,45 @@
+
+body {
+    --link-color: var(--text-normal);
+    --link-color-hover: var(--text-normal);
+    --link-decoration: underline;
+    --link-decoration-hover: none;
+    --link-external-color: var(--text-muted);
+    --link-external-color-hover: var(--text-normal);
+    --link-external-decoration: underline;
+    --link-external-decoration-hover: none;
+    --link-external-filter: none;
+    --link-unresolved-color: var(--text-normal);
+    --link-unresolved-opacity: 0.6;
+}
+
+/*internal links*/
+
+.cm-hmd-internal-link .cm-underline, .internal-link{
+    font-weight: 500;
+}
+.cm-hmd-internal-link, .internal-link {
+    padding-left: 3px;
+    padding-right: 3px;
+}
+.cm-hmd-internal-link:hover {
+    background: var(--background-modifier-hover); 
+    padding-top: 2px;
+    padding-bottom: 3px;
+    border-radius: var(--radius-s)
+}
+
+/* metadata external links */
+.cm-url .cm-underline {
+    color: var(--text-muted) !important;
+}
+
+/* applies to all */
+.cm-underline, .cm-url, .cm-link, .internal-link, .internal-link-unresolved {
+    text-underline-offset: 0.2em !important;
+    text-decoration-color: var(--text-faint) !important;
+    text-decoration-thickness: 0.5px !important;
+}
+ a.cm-underline:hover {
+    color: var(--text-normal) !important;
+ }
