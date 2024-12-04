@@ -1,0 +1,53 @@
+
+/* hide lines */
+.tree-item-children {
+    border-left: transparent;
+}
+
+.tree-item-self.nav-folder-title,
+.tree-item-selv.nav-folder-title:hover {
+    font-weight: var(--font-semibold) !important;
+}
+
+
+.tree-item-self.nav-folder-title:hover {
+background-color: transparent !important;
+}
+    
+    /* fold indicator is hidden if there is an iconize icon */
+    .tree-item .tree-item-self:has(.iconize-icon) .tree-item-icon {
+        position: relative; 
+        width: 0px; 
+    }
+    /* if the iconize icon is hovered, show the fold indicator */
+    .tree-item .tree-item-self:has(.iconize-icon:hover) .tree-item-icon {
+        position: absolute;
+        width: 16px;
+        background-color: var(--color-base-30);
+        border-radius: 2px;
+    }
+    /* if the iconize icon is hovered, hide the iconize icon */
+    .tree-item .tree-item-self .iconize-icon:hover{
+        position: relative;
+        margin: 0px !important;
+        width: 0px;
+    }
+    /* if the fold indicator is hovered, hide/keep hiding the iconize icon */
+    .tree-item .tree-item-self:has(.tree-item-icon:hover) .iconize-icon {
+        position: relative;
+        margin: 0px !important;
+        width: 0px;
+    }
+    /* if the fold indicator is hovered, show/keep showing the fold indicator */
+    .tree-item .tree-item-self .tree-item-icon:hover {
+        position: absolute;
+        width: 16px;
+        background-color: var(--color-base-30);
+        border-radius: 2px;
+    }
+    /* if the fold indicator is hovered, darken arrow icon */
+    .tree-item .tree-item-self .tree-item-icon:hover svg {
+        color: var(--nav-item-color-hover);
+        cursor: var(--cursor-link);
+    }
+
