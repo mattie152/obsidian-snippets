@@ -1,0 +1,37 @@
+/* hide lines */
+.tree-item-children {
+    border-left: transparent;
+}
+
+.tree-item-self.nav-folder-title,
+.tree-item-selv.nav-folder-title:hover {
+    font-weight: var(--font-semibold) !important;
+}
+
+
+/* fold indicator is hidden if there is an iconize icon */
+.tree-item .tree-item-self:has(.iconize-icon) .tree-item-icon {
+    /* background-color: pink; */
+    position: relative; /* moves it slightly closer to the iconize icon, makes width work */
+    width: 0px; 
+}
+/* if the element is hovered, show the fold indicator */
+.tree-item .tree-item-self:has(.iconize-icon):hover .tree-item-icon {
+    position: absolute;
+    width: 16px;
+}
+/* if the element is hovered, hide the iconize icon */
+.tree-item .tree-item-self:hover .iconize-icon{
+    position: relative;
+    margin: 0px !important; /* otherwise the margin stays and the text will be further right than for unhovered */
+    width: 0px;
+}
+/* if the element is hovered, darken arrow icon */
+.tree-item .tree-item-self:hover .tree-item-icon svg {
+    color: var(--nav-item-color-hover);
+}
+/* if the element is hovered, change the cursor */
+.tree-item-self.is-clickable:hover {
+    cursor: var(--cursor-link);
+}
+
